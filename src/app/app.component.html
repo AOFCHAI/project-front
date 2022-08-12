@@ -1,0 +1,118 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- ============= homePage ============= -->
+<div *ngIf="!isLogin">
+  <!-- navber -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" id="up">
+    <a class="navbar-brand" href="home">TODAY</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="home" style="cursor: pointer;">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="home/login" style="cursor: pointer;">login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="home/register" style="cursor: pointer;">register</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- content -->
+  <div role="main">
+    <router-outlet></router-outlet>
+  </div>
+
+  <!-- footer -->
+  <footer style="background: #e8e4e4;">
+    <div class="font-monospace text-center my-auto copyright"
+      style="padding: 0;padding-top: 13px;height: 49.8px;background: #214d90;;width: 100%;">
+      <span class="" style="font-family:  serif; font-size: 14px;padding-top: 4px;">Development © 2021
+      </span>
+    </div>
+  </footer>
+</div>
+
+<!-- ============= Menu-actor ============= -->
+<div>
+  <ng-template ngxPermissionsOnly="ADMIN">
+    <!-- navber -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" id="up" style="background-color: #7952b3;">
+      <a class="navbar-brand" href="admin/home">LOGO-ADMIN</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" style="cursor: pointer;">{{userFirst}}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="logOut()" style="cursor: pointer;">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- content -->
+    <div role="main">
+      <router-outlet></router-outlet>
+    </div>
+
+    <!-- footer -->
+    <footer style="background: #e8e4e4;">
+      <div class="font-monospace text-center my-auto copyright"
+        style="padding: 0;padding-top: 13px;height: 49.8px;background: #214d90;;width: 100%;">
+        <span class="" style="font-family:  serif; font-size: 14px;padding-top: 4px;">Development © 2021
+        </span>
+      </div>
+    </footer>
+  </ng-template>
+
+  <ng-template ngxPermissionsOnly="USER">
+    <!-- navber -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" id="up" style="background-color: #7952b3;">
+      <a class="navbar-brand" href="user/home">LOGO-USER</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" style="cursor: pointer;">{{userFirst}}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="logOut()" style="cursor: pointer;">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- content -->
+    <div role="main">
+      <router-outlet></router-outlet>
+    </div>
+
+    <!-- footer -->
+    <footer style="background: #e8e4e4;">
+      <div class="font-monospace text-center my-auto copyright"
+        style="padding: 0;padding-top: 13px;height: 49.8px;background: #214d90;;width: 100%;">
+        <span class="" style="font-family:  serif; font-size: 14px;padding-top: 4px;">Development © 2021
+        </span>
+      </div>
+    </footer>
+  </ng-template>
+</div>
