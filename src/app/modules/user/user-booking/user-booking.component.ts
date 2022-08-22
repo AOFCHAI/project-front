@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-user-booking',
-  templateUrl: './user-home.component.html',
-  styleUrls: ['./user-home.component.css']
+  selector: 'app-user-home',
+  templateUrl: './user-booking.component.html',
+  styleUrls: ['./user-booking.component.css']
 })
 export class UserHomeComponent implements OnInit {
 

@@ -1,97 +1,163 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<div id="body"
+    style="background-image: url(https://cdn.pixabay.com/photo/2016/05/02/23/48/ball-1368282_960_720.jpg); min-height: 700px;">
+    <form [formGroup]="customerRegisterForm" (ngSubmit)="onSubmit()">
+        <div class="container"
+            style="padding-left: 50px; padding-right: 30px; padding-bottom: 50px; padding-top: 20px; background-color: #959595;">
 
-
-<section class="vh-100 gradient-custom">
-  <div class="container py-5 h-100">
-    <div class="row justify-content-center align-items-center h-100">
-      <div class="col-12 col-lg-9 col-xl-7">
-        <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
-          <div class="card-body p-4 p-md-5">
-            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Registration Form</h3>
-            <form>
-
-              <div class="row">
-                <div class="col-md-6 mb-4">
-
-                  <div class="form-outline">
-                    <input type="text" id="firstName" class="form-control form-control-lg" />
-                    <label class="form-label" for="firstName">First Name</label>
-                  </div>
-
+            <div
+                class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h3 class="text-dark">ลงทะเบียน</h3>
+                <div class="btn-toolbar mb-2 mb-md-0">
                 </div>
-                <div class="col-md-6 mb-4">
+            </div>
 
-                  <div class="form-outline">
-                    <input type="text" id="lastName" class="form-control form-control-lg" />
-                    <label class="form-label" for="lastName">Last Name</label>
-                  </div>
+            <div class="tab-pane fade show active" id="nav-user" role="tabpanel" aria-labelledby="nav-user-tab">
+                <div class="card border-top-0 border-0">
+                    <div class="card-body bg-white" style="padding-left: 30px; padding-right: 30px;">
+                    </div>
+                    <!-- <div class="col-md-4">
+                    <div class="input-group">
+                        <div class="input-group-text">รหัสบัตรประชาชน</div>
+                        <input type="text" class="form-control" id="autoSizingInputGroup" placeholder="รหัสบัตรประชาชน"
+                            formControlName="userCardId" ng-minlength="13">
+                    </div>
+                </div> -->
+                    <!-- <div class="col-md-4">
+                    <div class="input-group">
+                        <div class="input-group-text">รหัสผู้ใช้</div>
+                        <input type="text" class="form-control" id="autoSizingInputGroup" placeholder="รหัสผู้ใช้"
+                            formControlName="userHnId">
+                    </div>
+                </div> -->
+                    <div class="col-md-2">
+                        <div class="input-group">
+                            <div class="input-group-text">คำนำหน้า</div>
+                            <select id="inputState" class="form-select" formControlName="userdtTitle">
+                                <option value="" disabled>เลือกคำนำหน้า</option>
+                                <option value="นาย" >นาย</option>
+                                <option value="นาง" >นาง</option>
+                                <option value="นางสาว" >นางสาว</option>
 
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="input-group">
+                            <div class="input-group-text">ชื่อ</div>
+                            <input type="text" class="form-control" id="autoSizingInputGroup" placeholder="ชื่อ"
+                                formControlName="userdtFirstname">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="input-group">
+                            <div class="input-group-text">สกุล</div>
+                            <input type="text" class="form-control" id="autoSizingInputGroup" placeholder="สกุล"
+                                formControlName="userdtLastname">
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-4">
+                    <div class="input-group">
+                        <div class="input-group-text">วันเดือนปีเกิด</div>
+                        <input type="date" class="form-control" id="autoSizingInputGroup" placeholder="ว/ด/ป เกิด"
+                            formControlName="userBirthday">
+                    </div>
+                </div> -->
+                    <div class="col-md-2 col-sm-6">
+                        <div class="input-group">
+                            <div class="input-group-text">เพศ</div>
+                            <select id="inputState" class="form-select" formControlName="userdtGender">
+                                <option value="" disabled>เลือกเพศ</option>
+                                <option value="ชาย" >ชาย</option>
+                                <option value="หญิง" >หญิง</option>
+                                <!-- <option *ngFor="let gender of  " [ngValue]="gender">{{ gender }}</option> -->
+                            </select>
+                        </div>
+                    </div>
                 </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-6 mb-4 d-flex align-items-center">
-
-                  <div class="form-outline datepicker w-100">
-                    <input type="text" class="form-control form-control-lg" id="birthdayDate" />
-                    <label for="birthdayDate" class="form-label">Birthday</label>
-                  </div>
-
+            </div>
+            <div class="col-md-4">
+                <div class="input-group">
+                    <div class="input-group-text">เบอร์โทรศัพท์</div>
+                    <input type="tel" class="form-control" id="autoSizingInputGroup" placeholder="เบอร์โทรศัพท์"
+                        formControlName="userdtPhone">
                 </div>
-                <div class="col-md-6 mb-4">
-
-                  <h6 class="mb-2 pb-1">Gender: </h6>
-
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender"
-                      value="option1" checked />
-                    <label class="form-check-label" for="femaleGender">Female</label>
-                  </div>
-
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender"
-                      value="option2" />
-                    <label class="form-check-label" for="maleGender">Male</label>
-                  </div>
-
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="otherGender"
-                      value="option3" />
-                    <label class="form-check-label" for="otherGender">Other</label>
-                  </div>
-
+            </div>
+            <div class="col-md-4">
+                <div class="input-group">
+                    <div class="input-group-text">อีเมล</div>
+                    <input type="tel" class="form-control" id="autoSizingInputGroup" placeholder="อีเมล"
+                        formControlName="userdtEmail">
                 </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-6 mb-4 pb-2">
-
-                  <div class="form-outline">
-                    <input type="email" id="emailAddress" class="form-control form-control-lg" />
-                    <label class="form-label" for="emailAddress">Email</label>
-                  </div>
-
+            </div>
+            <div class="col-md-3">
+                <div class="input-group">
+                    <div class="input-group-text">รหัสไปรษณีย์</div>
+                    <input type="tel" class="form-control" id="autoSizingInputGroup" placeholder="กรอกรหัสไปรษณีย์"
+                        formControlName="zipCode">
                 </div>
-                <div class="col-md-6 mb-4 pb-2">
+            </div>
+            <div class="col-md-3">
+                <div class="input-group">
+                    <div class="input-group-text">จังหวัด</div>
+                    <select id="inputState" class="form-select">
+                        <option value="" disabled>--จังหวัด--</option>
 
-                  <div class="form-outline">
-                    <input type="tel" id="phoneNumber" class="form-control form-control-lg" />
-                    <label class="form-label" for="phoneNumber">Phone Number</label>
-                  </div>
-
+                    </select>
                 </div>
-              </div>
+            </div>
+            <div class="col-md-3">
+                <div class="input-group">
+                    <div class="input-group-text">อำเภอ</div>
+                    <select id="inputState" class="form-select">
+                        <option value="" disabled>--อำเภอ--</option>
 
-              <div class="mt-4 pt-2">
-                <input class="btn btn-primary btn-lg" type="submit" value="Submit" />
-              </div>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="input-group">
+                    <div class="input-group-text">ตำบล</div>
+                    <select id="inputState" class="form-select">
+                        <option value="" disabled>--ตำบล--</option>
 
-            </form>
-          </div>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="input-group">
+                    <div class="input-group-text">ที่อยู่</div>
+                    <input type="tel" class="form-control" id="autoSizingInputGroup" placeholder="รายละเอียดที่อยู่"
+                        formControlName="userdtAddrass">
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-start flex-wrap flex-md-nowrap align-items-center pt-2 pb-1">
+                <h5 class="text-dark">สร้างบัญชีผู้ใช้และรหัสผ่าน</h5>
+            </div>
+            <div class="card border-0 text-dark p-3 m-0"
+                style="background-color: rgb(97, 97, 97);border-radius: 10px;">
+                <div class="row">
+                    <div class="col-md-4 pb-2">
+                        <label for="exampleFormControlInput1" class="form-label">บัญชีผู้ใช้</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""
+                            formControlName="userdtUsername">
+                    </div>
+                    <div class="col-md-4 pb-2">
+                        <label for="exampleFormControlInput1" class="form-label">รหัสผ่าน</label>
+                        <input type="password" class="form-control" id="exampleFormControlInput1" placeholder=""
+                            formControlName="userdtPassword">
+                    </div>
+                    <div class="col-md-4 pb-2">
+                        <label for="exampleFormControlInput1" class="form-label">ยืนยันรหัสผ่าน</label>
+                        <input type="password" class="form-control" id="exampleFormControlInput1" placeholder=""
+                            formControlName="userdtPassword">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12" style="text-align: center;">
+                <button type="submit" class="btn btn-success">บันทึกข้อมูล</button>&nbsp;
+                <button type="reset" class="btn btn-danger">ล้างข้อมูล</button>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </form>
+</div>
